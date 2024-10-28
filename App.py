@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
+
 st.set_page_config(
     page_title="Data Galeria",
     layout="wide"  # Use 'wide' to take full advantage of the screen space
@@ -44,8 +44,8 @@ languages = [
     {"name": "huggingface", "url": "https://huggingface.co/", "img": "https://huggingface.co/front/assets/huggingface_logo.svg"},
     {"name": "llama", "url": "https://github.com/facebookresearch/llama", "img": "https://avatars.githubusercontent.com/u/153379578?s=48&v=4?text=🦙"}
 ]
-page_width = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True,)
-st.write(page_width)
+
+
 
 imgcol=st.columns([1 for i in languages])
 imgi=0
