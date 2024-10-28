@@ -4,6 +4,7 @@ st.set_page_config(
     page_title="Data Galeria",
     layout="wide"  # Use 'wide' to take full advantage of the screen space
 )
+st.html("Styles.html")
 # Title
 st.title("Hi 👋, I'm Srinag Marni")
 st.write(
@@ -83,7 +84,8 @@ projects = [
     {
         "name": "Gesture Based Mouse Control",
         "description": "Face detection using image processing.",
-        "image": "assets/Mouse Control-0694.gif"  # Replace with actual image URLs
+        "image": "assets/Mouse Control-0694.gif",  # Replace with actual image URLs
+        "url":"https://github.com/20171CSE0680/Handsfree_Control"
     },
     {
         "name": "AI Weather Report",
@@ -97,6 +99,12 @@ projects = [
         "description": "Analyzes Zomato restaurant data to explore cuisine types.",
         "image": "https://brandmusiq.com/assets/work_banner_vyEql_Zomato.jpg"  # Replace with actual image URLs
     },
+    {
+        "name": "Airbnb Dataset Project",
+        "url": "https://github.com/msrinag/airbnb_dmql_ub",
+        "description": "A Database hosted for airbnb listing and serching.",
+        "image": "assets/airbnb.gif"  # Replace with actual image URLs
+    },
 ]
 
 # Title
@@ -107,6 +115,9 @@ cols = st.columns(3)  # Adjust the number based on how many cards you want per r
 
 for index, project in enumerate(projects):
     with cols[index % 3]:  # Cycle through the columns
-        st.image(project["image"], use_column_width=True)  # Use an actual image URL here
-        st.markdown(f"**[{project['name']}]({project['url']})**" if "url" in project else f"**{project['name']}**")
-        st.write(project["description"])
+       with st.container(border=True):
+            st.html(f'<span class="watchlist_card"></span>')
+            st.image(project["image"], use_column_width=True)  # Use an actual image URL here
+            st.markdown(f"**[{project['name']}]({project['url']})**" if "url" in project else f"**{project['name']}**")
+            st.write(project["description"])
+   
